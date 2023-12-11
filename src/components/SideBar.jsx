@@ -1,4 +1,6 @@
 import { useState } from "react";
+import UserCard from "./UserCard";
+import Workspace from "./Workspace";
 
 export default function SideBar() {
   const generalList = [
@@ -56,28 +58,12 @@ export default function SideBar() {
   ));
   return (
     <aside>
-      <section className="btc-coin-community flex items-center justify-between">
-        <img src="/btc-coin.svg" alt="BTC Coin Community" />
-        <section>
-          <p className="font-16 btc-coin-community-title">BTC Coin Community</p>
-          <p className="font-14 color-secondary">12,500 Members</p>
-        </section>
-        <img src="/chevron-down.svg" />
-      </section>
+      <Workspace />
       <section className="general">
         <p className="font-12 general-title">General</p>
         <ul className="general-list">{generalListHTML}</ul>
       </section>
-      <section className="user-card flex justify-between items-center">
-        <section className="flex items-center">
-          <img className="user-card-avt" src="/avatar.svg" alt="User Avatar" />
-          <div className="">
-            <p className="user-card-name font-16 fw-600">Ryan Lee</p>
-            <p className="font-12 color-secondary">Premium</p>
-          </div>
-        </section>
-        <img src="/dot.svg" />
-      </section>
+      <UserCard />
     </aside>
   );
 }
